@@ -1,5 +1,5 @@
 #!/bin/sh
 
-while True:
-    sleep 10m
+while ${INITIALIZED}:
+    sleep ${INTERVAL}
     /app/fangfrisch --conf /etc/fangfrisch.conf refresh

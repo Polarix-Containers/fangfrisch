@@ -1,10 +1,17 @@
 ARG UID=200025
 ARG GID=200025
 ARG PYTHON=3.14
+ARG INTERVAL=10m
+ARG INITIALIZED=False
 
 FROM python:${PYTHON}-alpine
 
 LABEL maintainer="Thien Tran contact@tommytran.io"
+
+ARG UID
+ARG GID
+ARG INTERVAL
+ARG INITIALIZED
 
 RUN apk -U upgrade \
   && apk add libstdc++
