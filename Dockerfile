@@ -19,7 +19,7 @@ RUN apk -U upgrade \
 
 RUN --network=none \
     addgroup -g ${GID} fangfrisch \
-    && adduser -u ${UID} --ingroup fangfrisch --disabled-password --system fangfrish --home /app \
+    && adduser -u ${UID} --ingroup fangfrisch --disabled-password --system fangfrisch --home /app \
     && mkdir -p /var/lib/fangfrisch \
     && chown -R fangfrisch:fangfrisch /var/lib/fangfrisch
 
