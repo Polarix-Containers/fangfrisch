@@ -35,4 +35,6 @@ COPY --chmod=755 entrypoint.sh /entrypoint.sh
 COPY --from=ghcr.io/polarix-containers/hardened_malloc:latest /install /usr/local/lib/
 ENV LD_PRELOAD="/usr/local/lib/libhardened_malloc.so"
 
+VOLUME /var/lib/fangfrisch
+
 ENTRYPOINT [ "/entrypoint.sh" ]
