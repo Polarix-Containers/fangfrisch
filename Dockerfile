@@ -10,8 +10,9 @@ LABEL maintainer="Thien Tran contact@tommytran.io"
 
 ARG UID
 ARG GID
-ARG INTERVAL
-ARG INITIALIZED
+
+ENV INTERVAL=${INTERVAL}
+ENV INITIALIZED=${INITIALIZED}
 
 RUN apk -U upgrade \
   && apk add libstdc++
