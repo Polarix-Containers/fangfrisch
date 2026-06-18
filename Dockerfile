@@ -20,8 +20,8 @@ RUN apk -U upgrade \
 RUN --network=none \
     addgroup -g ${GID} fangfrisch \
     && adduser -u ${UID} --ingroup fangfrisch --disabled-password --system fangfrisch --home /app \
-    && mkdir -p /var/lib/fangfrisch \
-    && chown -R fangfrisch:fangfrisch /var/lib/fangfrisch
+    && mkdir -p /var/lib/fangfrisch /var/lib/clamav \
+    && chown -R fangfrisch:fangfrisch /var/lib/fangfrisch /var/lib/clamav
 
 WORKDIR /app
 
@@ -35,6 +35,6 @@ COPY --chmod=755 entrypoint.sh /entrypoint.sh
 COPY --from=ghcr.io/polarix-containers/hardened_malloc:latest /install /usr/local/lib/
 ENV LD_PRELOAD="/usr/local/lib/libhardened_malloc.so"
 
-VOLUME /var/lib/fangfrisch
+VOLUME /var/lib/fangfrisch /var/lib/clamav
 
 ENTRYPOINT [ "/entrypoint.sh" ]
