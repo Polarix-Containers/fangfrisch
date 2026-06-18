@@ -30,7 +30,7 @@ USER fangfrisch
 RUN pip3 install fangfrisch
 
 COPY fangfrisch.conf /etc/fangfrisch.conf
-COPY entrypoint.sh /entrypoint.sh
+COPY --chmod=755 entrypoint.sh /entrypoint.sh
 
 COPY --from=ghcr.io/polarix-containers/hardened_malloc:latest /install /usr/local/lib/
 ENV LD_PRELOAD="/usr/local/lib/libhardened_malloc.so"
