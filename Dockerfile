@@ -25,9 +25,9 @@ RUN --network=none \
 
 WORKDIR /app
 
-USER fangfrisch
-
 RUN pip3 install fangfrisch
+
+USER fangfrisch
 
 COPY fangfrisch.conf /etc/fangfrisch.conf
 COPY --chmod=755 entrypoint.sh /entrypoint.sh
