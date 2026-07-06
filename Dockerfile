@@ -23,8 +23,6 @@ RUN --network=none \
     && mkdir -p /var/lib/fangfrisch /var/lib/clamav \
     && chown -R fangfrisch:fangfrisch /var/lib/fangfrisch /var/lib/clamav
 
-WORKDIR /app
-
 RUN pip3 install fangfrisch
 
 USER fangfrisch
