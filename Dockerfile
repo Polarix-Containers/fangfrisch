@@ -15,7 +15,7 @@ ENV INTERVAL=${INTERVAL}
 ENV INITIALIZED=${INITIALIZED}
 
 RUN apk -U upgrade \
-  && apk add libstdc++
+    && apk add libstdc++
 
 RUN --network=none \
     addgroup -g ${GID} fangfrisch \
