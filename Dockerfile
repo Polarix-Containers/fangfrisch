@@ -19,9 +19,9 @@ RUN apk -U upgrade \
 
 RUN --network=none \
     addgroup -g ${GID} fangfrisch \
-    && adduser -u ${UID} --ingroup fangfrisch --disabled-password --system fangfrisch --home /app \
-    && mkdir -p /var/lib/fangfrisch /var/lib/clamav \
-    && chown -R fangfrisch:fangfrisch /var/lib/fangfrisch /var/lib/clamav
+    && adduser -u ${UID} --ingroup fangfrisch --disabled-password --system fangfrisch --home /var/lib/fangfrisch \
+    && mkdir -p /var/lib/clamav \
+    && chown -R fangfrisch:fangfrisch /var/lib/clamav
 
 WORKDIR /var/lib/clamav
 
